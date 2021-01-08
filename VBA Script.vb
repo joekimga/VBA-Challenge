@@ -1,17 +1,21 @@
 Sub WorksheetLoop():
     
-    'Set Headers
-    Range("I1") = "Ticker"
-    Range("J1") = "Yearly Change"
-    Range("K1") = "Percent Change"
-    Range("L1") = "Total Stock Volume"
+    Dim ws As Worksheet
     
-    Range("P1") = "Ticker"
-    Range("Q1") = "Value"
+        For Each ws In Sheets
     
-    Range("O2") = "Greatest % Increase"
-    Range("O3") = "Greatest % Decrease"
-    Range("O4") = "Greatest Total Volume"
+            'Set Headers
+            ws.[I1] = "Ticker"
+            ws.[J1] = "Yearly Change"
+            ws.[K1] = "Percent Change"
+            ws.[L1] = "Total Stock Volume"
+        
+            ws.[O2] = "Greatest % Increase"
+            ws.[O3] = "Greatest % Decrease"
+            ws.[O4] = "Greatest Total Volume"
+        
+            ws.[P1] = "Ticker"
+            ws.[Q1] = "Value"
 
     
     'Set Variables
@@ -104,11 +108,12 @@ Sub WorksheetLoop():
             total = total + Cells(i, 7).Value
             
         End If
-    Next i
+        
+        Next
+        
+    Next
                         
 
 End Sub
-
-
 
 
